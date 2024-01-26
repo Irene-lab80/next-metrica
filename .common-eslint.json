@@ -1,0 +1,157 @@
+
+{
+  "parserOptions": {
+    "project": [
+      "./tsconfig-eslint.json"
+    ]
+  },
+  "settings": {
+    "import/resolver": {
+      "typescript": {}
+    }
+  },
+  "rules": {
+    "cypress/unsafe-to-chain-command": "warn",
+    "cypress/no-unnecessary-waiting": "warn",
+    "react-hooks/rules-of-hooks": "error",
+    "react-hooks/exhaustive-deps": "warn",
+    "@typescript-eslint/explicit-member-accessibility": "error",
+    "no-useless-constructor": "off",
+    "@typescript-eslint/no-useless-constructor": "error",
+    "@typescript-eslint/prefer-readonly": "error",
+    "@typescript-eslint/no-namespace": "off",
+    "guard-for-in": "error",
+    "default-case": "error",
+    "default-case-last": "error",
+    "no-unreachable": "error",
+    "eqeqeq": "error",
+    "func-style": [
+      "error",
+      "declaration",
+      {
+        "allowArrowFunctions": true
+      }
+    ],
+    "prefer-arrow-callback": "error",
+    "arrow-body-style": [
+      "warn",
+      "as-needed"
+    ],
+    "@typescript-eslint/consistent-type-assertions": [
+      "error",
+      {
+        "assertionStyle": "as"
+      }
+    ],
+    "@typescript-eslint/no-duplicate-imports": "error",
+    "@typescript-eslint/explicit-module-boundary-types": "error",
+    "@typescript-eslint/member-ordering": "error",
+    "@typescript-eslint/consistent-indexed-object-style": [
+      "error",
+      "record"
+    ],
+    "@typescript-eslint/consistent-type-definitions": [
+      "error",
+      "interface"
+    ],
+    "max-depth": [
+      "error",
+      4
+    ],
+    "max-nested-callbacks": [
+      "error",
+      5
+    ],
+    "max-params": [
+      "error",
+      4
+    ],
+    "max-statements": [
+      "warn",
+      25
+    ],
+    "no-console": 1,
+    "prettier/prettier": [
+      "warn",
+      {
+        "trailingComma": "none"
+      }
+    ],
+    "import/order": [
+      "warn",
+      {
+        "newlines-between": "always",
+        "groups": [
+          [
+            "builtin",
+            "external"
+          ],
+          [
+            "internal",
+            "index",
+            "parent",
+            "sibling"
+          ],
+          "unknown"
+        ],
+        "pathGroups": [
+          {
+            "pattern": "(utils|global|packages|providers|services|types)/**/*",
+            "group": "internal",
+            "position": "before"
+          },
+          {
+            "pattern": "*.css",
+            "patternOptions": {
+              "matchBase": true
+            },
+            "group": "unknown",
+            "position": "after"
+          },
+          {
+            "pattern": "*.scss",
+            "patternOptions": {
+              "matchBase": true
+            },
+            "group": "unknown",
+            "position": "after"
+          }
+        ],
+        "alphabetize": {
+          "order": "asc",
+          "caseInsensitive": true
+        }
+      }
+    ],
+    "newline-before-return": 2
+  },
+  "overrides": [
+    {
+      "files": [
+        "src/**/*.ts"
+      ],
+      "rules": {
+        "max-lines-per-function": [
+          "warn",
+          {
+            "max": 50,
+            "skipBlankLines": true,
+            "skipComments": true
+          }
+        ],
+        "max-lines": [
+          "warn",
+          {
+            "max": 300,
+            "skipBlankLines": true,
+            "skipComments": true
+          }
+        ],
+        "complexity": [
+          "warn",
+          10
+        ]
+      }
+    }
+  ]
+}
