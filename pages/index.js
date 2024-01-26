@@ -18,6 +18,13 @@ export default function Home() {
       {/* <main className={`${styles.main} ${inter.className}`}>HELLO IT'S ME</main> */}
       <main className={``}>
         <h1>HELLO IT'S ME</h1>
+        <button
+          onClick={() => {
+            throw new Error();
+          }}
+        >
+          ERROR
+        </button>
         <ul>
           <Link href={"/blog"}>Blog</Link>
           <Link href={"/clients"}>Clients</Link>
