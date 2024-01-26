@@ -8,6 +8,12 @@ const inter = Inter({subsets: ["latin"]});
 const obj = {property: 1};
 
 export default function Home() {
+  async function getPosts() {
+    const res = await fetch("https://jsonplaceholder.typicode.com/posts");
+    throw new Error();
+    // return await res.json();
+  }
+
   return (
     <>
       <Head>
@@ -21,7 +27,7 @@ export default function Home() {
         <h1>HELLO IT'S ME</h1>
         <button
           onClick={() => {
-            throw new Error();
+            getPosts();
           }}
         >
           ERROR ERROR
