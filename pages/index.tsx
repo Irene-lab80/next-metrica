@@ -24,7 +24,7 @@ export default function Home() {
             throw new Error();
           }}
         >
-          ERROR
+          ERROR ERROR
         </button>
         <ul>
           <Link href={"/blog"}>Blog</Link>
