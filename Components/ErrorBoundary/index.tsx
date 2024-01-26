@@ -1,5 +1,5 @@
-import { Component, ErrorInfo, ReactNode } from 'react';
-
+import {Component, ErrorInfo, ReactNode} from "react";
+import React from "react";
 interface StateType {
   hasError: boolean;
 }
@@ -11,21 +11,26 @@ interface PropsType {
 class ErrorBoundary extends Component<PropsType, StateType> {
   constructor(props: PropsType) {
     super(props);
-    this.state = { hasError: false };
+    this.state = {hasError: false};
   }
 
-  public static getDerivedStateFromError(error: string): { hasError: boolean; error: string } {
-    return { hasError: true, error };
+  public static getDerivedStateFromError(error: string): {
+    hasError: boolean;
+    error: string;
+  } {
+    return {hasError: true, error};
   }
 
   componentDidCatch(error: Error, errorInfo: ErrorInfo): void {
-    console.log('--------------------------------ERROR------------------------------------');
+    console.log(
+      "--------------------------------ERROR------------------------------------"
+    );
   }
   public render(): ReactNode {
-    const { hasError } = this.state;
-    const { children } = this.props;
+    const {hasError} = this.state;
+    const {children} = this.props;
 
-    return !hasError ? children : (window.location.href = '/error');
+    return !hasError ? children : <div>ERROR</div>;
   }
 }
 
