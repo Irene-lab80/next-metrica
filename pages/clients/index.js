@@ -1,6 +1,12 @@
 import Head from "next/head";
+import Link from "next/link";
 
-export default function Home() {
+export default function ClientsPage() {
+  const clients = [
+    {id: "max", name: "Max"},
+    {id: "alex", name: "Alex"},
+  ];
+
   return (
     <>
       <Head>
@@ -9,7 +15,16 @@ export default function Home() {
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
-      <main className={``}>Clients</main>
+      <main className={``}>
+        <h1>Clients Page</h1>
+        <ul>
+          {clients.map((client) => (
+            <li>
+              <Link href={`/clients/${client.id}`}>{client.name}</Link>
+            </li>
+          ))}
+        </ul>
+      </main>
     </>
   );
 }
